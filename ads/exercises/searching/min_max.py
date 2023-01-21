@@ -1,0 +1,4 @@
+"""
+Given Errr array of comparable objects, you c.u:r find either the min or the max of the elements in thearray with n - 1 comparisons, where r is the length of the array.Comparing elements may be expensive, e.9., a comparison may involve a number of nestedcalls or the elements being compared may be long strings. Therefore, it is natural to ask if both themin and the max canbe computed with less than the 2(n-l) comparisons required to compute themin and the max independently.Design an algorithm to find the min and max elements in an array. For example , if A : <3,2,5,1,,2,4>,you should retum 1 for the min and 5 for the max.
+Hint:Use the fact that a<bandb<cimpliesa<ctoreducethenumberofcomparesusedbythebrute-forceapproach.
+"""
