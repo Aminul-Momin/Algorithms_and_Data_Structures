@@ -1,5 +1,5 @@
 <!-- <p align="center"><img src="https://raw.githubusercontent.com/keon/algorithms/master/docs/source/_static/logo/logotype1blue.png"></p> -->
-<p align="center"><img src="assets/algorithms.png"></p>
+<p align="center"><img src="ads_logo.png"></p>
 
 <h1 style="color: red" align="center">Algorithms and Data Structures</h1>
 
