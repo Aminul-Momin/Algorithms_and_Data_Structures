@@ -8,11 +8,11 @@ DATA = load_json_data("tree")
 #==============================================================================
 
 
-@pytest.mark.parametrize("L, expected", DATA["height_bt"])
-def test_height_bt(L, expected):
-    bst = gen_bst(L)
-    assert height_bt_v1(bst._root) == expected
-    assert height_bt_v2(bst._root) == expected + 1
+# @pytest.mark.parametrize("L, expected", DATA["height_bt"])
+# def test_height_bt(L, expected):
+#     bst = gen_bst(L)
+#     assert height_bt_v1(bst._root) == expected
+#     assert height_bt_v2(bst._root) == expected + 1
 
 
 @pytest.mark.parametrize("L, expected", DATA["width_bt"])

@@ -17,7 +17,7 @@ from typing import Container
 def magic_index(L: Container[int]) -> int:
     """Finds the index in 'L' where L[index] == index.
     Args:
-        L: The container of the sorted integers.
+        L: A SORTED array of DISTINCT integer.
 
     Returns:
         The index in 'L' where L[index] == index.
@@ -57,7 +57,7 @@ def magic_index_v2(L: Container[int]) -> int:
     """Finds the index in 'L' where L[index] == index.
 
     Args:
-        L: The container of the sorted integers.
+        L: A SORTED array of REPEATABLE integer.
 
     Returns:
         The index in 'L' where L[index] == index.

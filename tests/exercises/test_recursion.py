@@ -4,7 +4,17 @@ from ads.exercises.recursion import *
 from ads.utils import load_json_data
 # from ece.recursion.all_recursion import n_choose_k
 
+import logging
+logger = logging.getLogger(__name__)
+handler = logging.FileHandler("logs/ads_test_array_log.log", mode='w')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+
+#==============================================================================
+logger.info("Loading Json data for 'test_array'")
 DATA = load_json_data('recursion')
+#==============================================================================
 
 ############################  Permutation Testing  ###########################
 

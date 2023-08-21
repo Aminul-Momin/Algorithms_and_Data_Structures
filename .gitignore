@@ -8,14 +8,17 @@ README_PVT.md
 questions_list.txt
 nbs
 machine_learning
-
+tmp
+requirements_dev.txt
 
 CHANGES.md
 CONTRIBUTING.md
 manifest.in
 pyproject.toml
+pyproject.txt
 
 
+.tmp.driveupload/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -25,8 +28,9 @@ pyproject.toml
 **add.egg-info*
 
 # Environmental
-.venv
+.venv/
 venv/
+.vim/
 ENV/
 .vscode
 pip-wheel*

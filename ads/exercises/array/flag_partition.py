@@ -4,6 +4,7 @@ elements so that all elements less than A[i] appear first, followed by
 elements equal to A[i], followed by elements greater than A[i].[- EPI: 5.1].
 """
 #==============================================================================
+
 RED, WHITE, BLUE = range(3)
 
 
@@ -11,19 +12,19 @@ def dutch_flag_partition(pivot_index, A):
 
     pivot = A[pivot_index]
     # Keep the following invariants during partitioning:
-    # bottom group: A[:smaller].
-    # middle group: A[smaller:equal].
-    # unclassified group: A[equal:larger].
-    # top group: A[larger:].
-    smaller, equal, larger = 0, 0, len(A)
+    # bottom group: A[:left].
+    # middle group: A[left:idx].
+    # unclassified group: A[idx:right].
+    # top group: A[right:].
+    left, idx, right = 0, 0, len(A)
     # Keep iterating as long as there is an unclassified element.
-    while equal < larger:
-        # A[equal] is the incoming unclassified element.
-        if A[equal] < pivot:
-            A[smaller], A[equal] = A[equal], A[smaller]
-            smaller, equal = smaller + 1, equal + 1
-        elif A[equal] == pivot:
-            equal += 1
-        else:  # A[equal] > pivot.
-            larger -= 1
-            A[equal], A[larger] = A[larger], A[equal]
+    while idx < right:
+        # A[idx] is the incoming unclassified element.
+        if A[idx] < pivot:
+            A[left], A[idx] = A[idx], A[left]
+            left, idx = left + 1, idx + 1
+        elif A[idx] == pivot:
+            idx += 1
+        else:  # A[idx] > pivot.
+            right -= 1
+            A[idx], A[right] = A[right], A[idx]

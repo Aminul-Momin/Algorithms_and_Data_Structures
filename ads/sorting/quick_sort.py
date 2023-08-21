@@ -103,3 +103,28 @@ def quick_sort_v3(arr):
     middle = [x for x in arr if x == pivot]
     right = [x for x in arr if x > pivot]
     return quick_sort_v3(left) + middle + quick_sort_v3(right)
+
+
+def _main():
+    for _ in range(1000):
+        for sort in [quick_sort, quick_sort_v2, quick_sort_v3]:
+            P = [randrange(1, 150) for _ in range(randrange(1, 15))]
+            try:
+                returned = sort(P)
+                expected = sorted(P)
+                
+                if sort.__name__ == 'quick_sort_v3':
+                    assert returned == expected
+                else:
+                    #print(sort.__name__)
+                    assert P == expected
+            except AssertionError:
+                print(f"FunctionName:\t{sort.__name__} ==> {red('AssertionError')}")
+                print(P, returned, expected)
+                break
+
+# ================================================================
+
+
+if __name__ == '__main__':
+    _main()

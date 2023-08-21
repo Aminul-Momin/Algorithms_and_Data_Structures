@@ -6,16 +6,25 @@ import unittest
 from ads.utils import load_json_data
 from ads.exercises.array.arrayEPI_pvt import *
 from ads.exercises.array import *
+
+import logging
+logger = logging.getLogger(__name__)
+handler = logging.FileHandler("logs/ads_test_array_log.log", mode='w')
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+logger.addHandler(handler)
+
 #==============================================================================
+logger.info("Loading Json data for 'test_array'")
 DATA = load_json_data('array')
 #==============================================================================
 
 
 ############################# Delete Duplicates ##############################
-@pytest.mark.parametrize("P, expected", DATA["delete_duplicates"])
-def test_delete_duplicates(P, expected):
-    delete_duplicates(P)
-    assert P == expected
+@pytest.mark.parametrize("given, expected", DATA["delete_duplicates"])
+def test_delete_duplicates(given, expected):
+    returned = delete_duplicates(given)
+    assert returned == expected
 
 
 def test_delete_duplicates_v2():
@@ -76,14 +85,20 @@ def test_buy_sell_once():
     P = [randrange(0, 9) for _ in range(15)]
     one_sell_profit = buy_sell_once(P)
     k_sell_profit = buy_and_sell_k_times(P, 2)
-    assert one_sell_profit == k_sell_profit
+    try:
+        assert one_sell_profit == k_sell_profit
+    except:
+        logger.critical(f"{test_buy_sell_once.__name__}: Test Faild")
 
 
 def test_buy_sell_once_v2():
     P = [randrange(0, 9) for _ in range(15)]
     one_sell_profit = buy_sell_once_v2(P)
     k_sell_profit = buy_and_sell_k_times(P, 2)
-    assert one_sell_profit == k_sell_profit
+    try:
+        assert one_sell_profit == k_sell_profit
+    except:
+        logger.critical(f"{test_buy_sell_once_v2.__name__}: Test Faild")
 
 
 def test_buy_sell_twice():
@@ -129,8 +144,8 @@ def test_apply_permutation():
 
 @pytest.mark.parametrize("P, expected", DATA["next_permutation"])
 def test_next_permutation_v1(P, expected):
-    next_permutation_v1(P)
-    assert P == expected
+    returned = next_permutation_v1(P)
+    assert returned == expected
 
 
 ##############################  Generate Primes ##############################

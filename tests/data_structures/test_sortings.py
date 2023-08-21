@@ -56,16 +56,16 @@ class TestSorting(unittest.TestCase):
             L = merge_sort(array)
             assert is_sorted(L)
 
-    def test_merge_sort_two(self):
+    def test_merge_sort_v2(self):
 
         for array in self.list_of_lists:
-            merge_sort_two(array)
+            merge_sort_v2(array)
             assert is_sorted(array)
 
-    def test_merge_sort_three(self):
+    def test_merge_sort_v3(self):
 
         for array in self.list_of_lists:
-            merge_sort_three(array)
+            merge_sort_v3(array)
             assert is_sorted(array)
 
 #*************************** QuickSort Testings: *****************************#
@@ -95,3 +95,16 @@ def test_counting_sort():
         a = sorted(list(L))
         counting_sort(L)
         assert a == L
+
+def test_merge_sort_a():
+    for _ in range(1000):
+        for sort in [merge_sort, merge_sort_v2, merge_sort_v3]:
+            P = [randrange(1, 150) for _ in range(randrange(1, 15))]
+            
+            returned = sort(P)
+            expected = sorted(P)
+                
+            if sort.__name__ == 'merge_sort':
+                assert returned == expected
+            else:
+                assert P == expected

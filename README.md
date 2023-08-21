@@ -1,4 +1,3 @@
-<!-- <p align="center"><img src="https://raw.githubusercontent.com/keon/algorithms/master/docs/source/_static/logo/logotype1blue.png"></p> -->
 <p align="center"><img src="ads_logo.png"></p>
 
 <h1 style="color: red" align="center">Algorithms and Data Structures</h1>
@@ -8,6 +7,12 @@
 If you want to use the API of `Algorithms and Data Structures` in your code, you can clone it from github as follows:
 
 -   `$ git clone git@github.com:Aminul-Momin/Algorithms_and_Data_Structures.git`
+
+How to install the project in edit mode?
+
+-   `$ pip install -e .`
+
+## How to use it?
 
 After you have install the package, use it as follows.
 
@@ -25,39 +30,22 @@ if __name__ == "__main__":
 -   [Pytest API Reference](https://docs.pytest.org/en/latest/reference/reference.html#command-line-flags)
 -   [How to invoke pytest](https://docs.pytest.org/en/latest/how-to/usage.html#specifying-which-tests-to-run)
 
--   `$ pytest [-q | -v]`
-
-    -   `pytest` will run all files of the form `test_*.py` or `*_test.py` in the current directory and its subdirectories in quiet (`q`) or verbose (`v`) mode.
-
--   `$ python3 -m pytest ads/tests/sortings.py`
-
-    -   Run pytest on perticular module.
-
--   `$ pytest -k key_word`
-
-    -   run pytest by key (`k`) word wxpression
-    -   Example: `$ pytest ads/test/sorti`
-
--   `$ pytest -k -s test_avl_tree`
-
-    -   Use `-s` flag to allow to execute print statement in your test functions.
-
--   `pytest -v tests/my-directory/test_demo.py::test_specific_function`
-
-    -   To run a single test function, add double colon (`::`) and the test function name as above.
-
--   `pytest -m slow`
-    -   Run tests by marker (`m`) expressions
-    -   run all tests which are decorated with the `@pytest.mark.slow` decorator.
+-   `$ pytest [-q | -v]` → It will run all tests contained by files of the form `test_*.py` or `*_test.py` in the current directory and its subdirectories in quiet (`q`) or verbose (`v`) mode.
+-   `$ pytest -k key_word` → run pytest by key (`k`) word expression
+    -   `$ pytest -k test_searching.py` → Run pytest on the given module only.
+    -   `$ pytest -k test_magic_index` → Run pytest on the given function (as key-word) only.
+    -   `$ pytest -k -s test_avl_tree` → Use `-s` flag to allow to execute print statement in your test functions.
+-   `$ pytest -m marker` → run all tests by marker (marked by `marker` using the `@pytest.mark.marker` decorator).
+    -   `pytest -m parametrize` → run all tests by marker (marked by `parametrize` using the `@pytest.mark.parametrize` decorator).
+    -   `pytest -m slow`
+    -   `pytest -m xfail`
+-   `$ python3 -m pytest tests/exercises/test_searching.py` → Run pytest on the given module only.
+-   `$ pytest -v tests/my-directory/test_demo.py::test_specific_function` → To run a single test function, add double colon (`::`) and the test function name as above.
 
 ## How to format ?
 
--   `$ python -m black {source_file_or_directory}`
-
-    -   Format the whole package using `black`
-
--   `$ black ads/searching/avl_tree.py`
-    -   Formatting perticular module using black.
+-   `$ python -m black <file_name.py | package>` → Format the given file/package using `black`
+-   `$ black ads/searching/avl_tree.py` → Formatting perticular module using black.
 
 ## List of Implemented Data Structures
 

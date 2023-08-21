@@ -80,7 +80,7 @@ def merge_sort_v2(a: List) -> None:
         _merge_sort_v2(a, mid + 1, high)
 
         # merges a[low ... mid] and a[mid+1 ... high], two halves of the array
-        merge_two(a, low, mid, high)
+        merge_v2(a, low, mid, high)
 
     _merge_sort_v2(a, 0, len(a) - 1)
 
@@ -181,11 +181,20 @@ def merge_v3(a: List, low: int, mid: int, high: int, aux: List) -> None:
             left_index += 1
 
 
-def main():
-    L = [randint(-20, 20) for _ in range(10)]
-    res = merge_sort_v2(L)
-    print(res)
+def _main():
+    for _ in range(1000):
+        P = [randrange(1, 150) for _ in range(randrange(1, 15))]
+        try:
+            returned1 = merge_sort(P)
+            returned2 = merge_sort_v2(P)
+            expected = sorted(P)
+            assert returned2 == expected
+        except AssertionError:
+            print(red('FAILED'))
+            print(P, returned1, returned2, expected)
+
+# ================================================================
 
 
 if __name__ == '__main__':
-    main()
+    _main()

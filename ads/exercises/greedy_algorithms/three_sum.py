@@ -19,6 +19,17 @@ def has_three_sum(A, v):
                 return True
     return False
 
+def has_three_sum(A, target):
+    for item in A:
+        left, right = 0, len(A) - 1
+        
+        while left < right:
+            total = item + A[left] + A[right]
+            if total < target: left += 1
+            elif total > target: right -= 1
+            else: return True
+    
+    return False
 
 def main():
     return all([

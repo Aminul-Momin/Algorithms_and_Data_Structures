@@ -7,6 +7,10 @@ from random import randint
 from collections import namedtuple
 from functools import reduce
 from typing import Container, List, Sequence, Union
+
+# ============================================================================
+# ============================================================================
+
 """ Search a sorted array for first occurrence of k. - [EPI: 11.1].
 
     Write a function 'search_first_of_k(L, key)' which takes as input a sorted

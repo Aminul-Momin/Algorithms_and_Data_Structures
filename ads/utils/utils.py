@@ -246,6 +246,17 @@ def red(s):
     # return '\033[01;31m%s\033[m' % s
     return "\033[01;5m  \033[01;31m %s \033[m  \033[m" % s
 
+def bold_pink(s):
+    # ANSI escape sequence for bold pink color
+    bold_pink_color = '\033[1;95m'
+    # ANSI escape sequence for resetting color
+    reset_color = '\033[0m'
+
+    # Concatenate the escape sequences with the string
+    colored_string = bold_pink_color + s + reset_color
+
+    # Print the colored string
+    print(colored_string)
 
 def load_json_data(test_package_name: str, **kwarg: Optional[str]) -> dict:
     """Load the required testing data for given 'test_package_name'.
@@ -264,7 +275,7 @@ def load_json_data(test_package_name: str, **kwarg: Optional[str]) -> dict:
     """
     kwarg = {
         'dir_name': os.path.abspath(".") + '/data/',
-        'file_name': 'ece_backup.json',
+        'file_name': 'ece.json',
         **kwarg
     }
 
