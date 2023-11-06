@@ -10,6 +10,9 @@ nbs
 machine_learning
 tmp
 requirements_dev.txt
+empty_module.py
+my_class.py
+test_log_functionality.py
 
 CHANGES.md
 CONTRIBUTING.md

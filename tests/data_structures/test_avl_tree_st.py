@@ -2,15 +2,14 @@ import os
 import unittest
 from random import randrange
 
-from ads.utils import load_data_from_file, load_data_from_collection, NUMBERS
+from ads.utils import load_data_from_file, load_data_from_collection, NUMBERS, BASE_DIR
 from ads.searching.avl_tree_st import AVLTreeST
 
 
 class TestAVLTreeST(unittest.TestCase):
     @classmethod
-    def setUpClass(self):
-        data = "Algorithms_and_Data_Structures/data/shellsST.txt"
-        self.DATA_FILE_PATH = os.path.abspath(os.path.join(os.pardir, data))
+    def setUpClass(cls):
+        cls.DATA_FILE_NAME = "shellsST.txt"
 
     def setUp(self):
         self.kvp = NUMBERS
@@ -18,7 +17,7 @@ class TestAVLTreeST(unittest.TestCase):
         self.T1 = AVLTreeST()
         self.T2 = AVLTreeST()
 
-        load_data_from_file(self.DATA_FILE_PATH, self.T1)
+        load_data_from_file(self.DATA_FILE_NAME, self.T1)
         load_data_from_collection(self.kvp, self.T2)
 
     def tearDown(self):

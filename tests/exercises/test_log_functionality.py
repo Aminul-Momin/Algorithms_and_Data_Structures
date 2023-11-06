@@ -6,17 +6,18 @@ import unittest
 from ads.utils import load_json_data
 from ads.exercises.array.arrayEPI_pvt import *
 from ads.exercises.array import *
+from ads.utils.utils import BASE_DIR
 
 # ============================================================================
 # ============================================================================
 
 import logging
 logger = logging.getLogger(__name__)
-handler = logging.FileHandler("logs/ads_log.log", mode='w')
+handler = logging.FileHandler(BASE_DIR/"logs/ads_log.log", mode='w')
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 handler.setFormatter(formatter)
 logger.addHandler(handler)
-
+logger.propagate = True
 
 #==============================================================================
 logger.info('Loading Json data for test_log_functionality')

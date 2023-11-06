@@ -8,14 +8,14 @@ from ads.searching.seperate_chaining_ht import *
 
 class TestSeperateChaininhHashST(unittest.TestCase):
     def setUp(self):
-        data = "Algorithms_and_Data_Structures/data/shellsST.txt"
-        self.DATA_FILE_PATH = os.path.abspath(os.path.join(os.pardir, data))
+        self.DATA_FILE_NAME = "shellsST.txt"
+        # self.DATA_FILE_PATH = os.path.abspath(os.path.join(os.pardir, data))
 
         self.numbers = NUMBERS
         self.zip_code = ZIP_CODES
 
         self.T1 = SeperateChaininhHashST()
-        load_data_from_file(self.DATA_FILE_PATH, self.T1)
+        load_data_from_file(self.DATA_FILE_NAME, self.T1)
 
         self.T2 = SeperateChaininhHashST()
         self.assertTrue(self.T2.is_empty())

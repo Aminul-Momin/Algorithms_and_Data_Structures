@@ -19,5 +19,11 @@ setup(
     ],
     install_requires=[
         'typing_extensions',
-    ]
+    ],
+    # The format for defining console scripts in console_scripts is: `command_name = package.module:function`
+    entry_points={
+        'console_scripts': [
+            'ads = ads.main:main',
+        ],
+    },
 )

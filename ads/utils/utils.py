@@ -1,13 +1,22 @@
+import json, os, logging
 from random import randint, randrange, choices
-import json, os
 from typing import Container, List, Iterable, Sequence, Optional, Callable
+from pathlib import Path
 
-from ..fundamentals.singly_linked_list import SLL
-from ..fundamentals._nodes import *
-from ..searching.bst_st import BinarySearchTreeST
-from ..searching.bst import AVL, BST
-from ..searching._nodes import BSTNode
+from ads.fundamentals.singly_linked_list import SLL
+from ads.fundamentals._nodes import *
+from ads.searching.bst_st import BinarySearchTreeST
+from ads.searching.bst import AVL, BST
+from ads.searching._nodes import BSTNode
 # =============================================================================
+logger = logging.getLogger(__name__)
+handler1 = logging.StreamHandler()
+logger.addHandler(handler1)
+logger.propagate = True
+# =============================================================================
+# Build paths inside the project like this: BASE_DIR/'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
 ARRAY_FOR_TREE = [10, 5, 13, 3, 7, 11, 14, 2, 4, 6, 8, 15, 16]
 
 NUMBERS = {
@@ -491,3 +500,14 @@ def name_of_module_scope():
 
 #     print("*" * 20, "After Mutation: ", "*" * 20)
 #     display(ST)
+
+
+
+#=============================================================================
+
+def _test_utils():
+    print(f" BASE_DIR: {BASE_DIR}")
+
+if __name__ == "__main__":
+    logging.info("Executing the main funtion")
+    _test_utils()

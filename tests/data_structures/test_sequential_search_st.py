@@ -9,8 +9,8 @@ from ads.utils import *
 class TestSequentialSearchST(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        data = "Algorithms_and_Data_Structures/data/shellsST.txt"
-        cls.DATA_FILE_PATH = os.path.abspath(os.path.join(os.pardir, data))
+        cls.DATA_FILE_NAME = "shellsST.txt"
+        # cls.DATA_FILE_PATH = os.path.abspath(os.path.join(os.pardir, data))
 
         cls.kvp = {
             10001: "Chelsea",
@@ -25,7 +25,7 @@ class TestSequentialSearchST(unittest.TestCase):
 
         cls.T1 = SequentialSearchST()
         cls.T2 = SequentialSearchST()
-        load_data_from_file(cls.DATA_FILE_PATH, cls.T1)
+        load_data_from_file(cls.DATA_FILE_NAME, cls.T1)
         load_data_from_collection(cls.kvp, cls.T2)
 
     @classmethod

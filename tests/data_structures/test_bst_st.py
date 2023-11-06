@@ -8,9 +8,8 @@ from ads.searching.bst_st import BinarySearchTreeST
 
 class TestBinarySearchTreeST(unittest.TestCase):
     @classmethod
-    def setUpClass(self):
-        data = "Algorithms_and_Data_Structures/data/shellsST.txt"
-        self.DATA_FILE_PATH = os.path.abspath(os.path.join(os.pardir, data))
+    def setUpClass(cls):
+        cls.DATA_FILE_NAME = "shellsST.txt"
 
     def setUp(self):
         self.kvp = NUMBERS
@@ -18,7 +17,7 @@ class TestBinarySearchTreeST(unittest.TestCase):
         self.T1 = BinarySearchTreeST()
         self.T2 = BinarySearchTreeST()
 
-        load_data_from_file(self.DATA_FILE_PATH, self.T1)
+        load_data_from_file(self.DATA_FILE_NAME, self.T1)
         load_data_from_collection(self.kvp, self.T2)
 
     def tearDown(self):

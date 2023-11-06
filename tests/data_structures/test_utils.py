@@ -3,7 +3,7 @@ from random import *
 
 from ads.utils import *
 
-DATA = load_json_data('utils')
+DATA = load_json_data("utils")
 
 
 @pytest.mark.parametrize("a, low, high, expected", DATA["reverse"])

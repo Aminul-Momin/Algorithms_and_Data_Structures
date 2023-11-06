@@ -5,11 +5,9 @@ from ads.fundamentals.singly_linked_list import SLL
 
 class TestSLL(unittest.TestCase):
     @classmethod
-    def setUpClass(self):
-        data = "Algorithms_and_Data_Structures/data/shellsST.txt"
-        self.DATA_FILE_PATH = os.path.abspath(os.path.join(os.pardir, data))
-
-        self.SLL2 = SLL()
+    def setUpClass(cls):
+        cls.DATA_FILE_NAME = "shellsST.txt"
+        cls.SLL2 = SLL()
 
     @classmethod
     def tearDownClass(self):
@@ -74,7 +72,7 @@ class TestSLL(unittest.TestCase):
         self.assertEqual(self.SLL1.insert_after(30, 50), None)
         self.assertEqual(self.SLL1._n, 3)
 
-        with self.assertRaises(RuntimeError):
+        with self.assertRaises(KeyError):
             self.emptyList.insert_after(None, 100)
             self.emptyList.insert_after(100, None)
 

@@ -25,6 +25,14 @@ if __name__ == "__main__":
     print(my_list)
 ```
 
+## How to run a module containing `relative import`:
+
+-   `$ python3 -m ads.utils.utils`
+
+## How to run a module containing `absolute import`:
+
+-   `$ python3 ads.utils.utils`
+
 ## How to test using [pytest](https://docs.pytest.org/en/latest/index.html)?
 
 -   [Pytest API Reference](https://docs.pytest.org/en/latest/reference/reference.html#command-line-flags)
