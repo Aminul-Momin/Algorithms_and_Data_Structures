@@ -76,12 +76,14 @@ if __name__ == "__main__":
     -   [bullbe_sort](ads/sorting/bullbe_sort.py)
 
 -   [Searching](ads/searching/)
+
     -   [Binary Search Tree](ads/searching/bst.py)
     -   [Binary Search Tree Symbol Table](ads/searching/bst_st.py)
     -   [AVL Tree Symbol Table](ads/searching/avl_tree_st.py)
     -   [Sequentiao Search Hash Table](ads/searching/sequential_search_st.py)
     -   [Linear Probing Hash Table](ads/searching/linear_probing_ht.py)
     -   [Seperate Chaining Hash Table](ads/searching/seperate_chaining_ht.py)
+
 -   [Heaps](ads/heaps/)
 
     -   [Priority Queue](ads/heaps/priority_queue.py)
@@ -89,6 +91,7 @@ if __name__ == "__main__":
     -   [Indexed Min Priority Queue](ads/heaps/index_min_pq.py)
 
 -   [String Processing](ads/string_processing/)
+
     -   [Tries](ads/string_processing/tries.py)
     -   [Ternary Search Tree](ads/string_processing/tst.py)
     -   [Substring Search](ads/string_processing/substring_search.py)
@@ -97,6 +100,7 @@ if __name__ == "__main__":
     -   [LSD Radix Sort](ads/string_processing/lsd_radix_sort.py)
     -   [MSD Radix Sort](ads/string_processing/msd_radix_sort.py)
     -   [Run Length](ads/string_processing/run_length.py)
+
 -   [Graph Processing](ads/graphs_processing/)
 
     -   [Graph](ads/graphs_processing/clrs/graphs.py)

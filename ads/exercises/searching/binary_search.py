@@ -2,11 +2,9 @@ from random import randint, randrange
 from typing import List
 #==============================================================================
 """
-Write a method that takes a sorted array and a key and retums the index of the
-first occurrence of that key in the array. Retum -1 if the key does not appear
-in the array. For example, when appliedto the array in Figure 11.1 your
-algorithm should return 3 if the given key is 108; if it is 285, youralgorithm
-should retum 6.
+Write a method that takes a sorted array and a key and returns the index of the
+first occurrence of that key in the array. Return -1 if the key does not appear
+in the array.
 
 Hint: What happens when every entry equals k? Don't stop when you first see k.
 """

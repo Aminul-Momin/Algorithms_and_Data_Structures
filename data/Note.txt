@@ -1,0 +1,56 @@
+
+
+
+""" In order to keep the implmentation similar to that of Algorithm in Java by 
+Robert Sedgwick and Kevin Wayne, we have not taken the advantage of the fact 
+that Python list is resizable. 
+"""
+
+
+* Algorithms_ADTs
+    
+    I) Sorting:
+        1) InsertionSort.py                 |
+        2) SelectionSort.py                 |
+        3) BubbleSort.py                    |
+        4) MergeSort.py                     |
+        5) QuickSort.py                     |
+        6) CountingSort.py                  |
+        7) LSD.py                           |
+        8) MSD.py                           |
+    
+    II) Stack_Queue:
+        1) SinglyLinkedList.py              |
+        2) DoublyLinkedList                 |
+        3) LinkedStack.py                   |
+        4) LinkedQueue.py                   |
+        5) ResizingArrayStack.py            | X
+        6) ResizingArrayQueue.py            | X
+        7) CircularLinedList.py             |
+
+    III) Searching:
+        1) BinarySearchTreeST.py            | X
+        2) AVTTreeST.py                     | X
+        3) BinarySearchST.py                |
+        4) RedBlackTree.py                  |
+        5) SequentialSearchST.py            | X
+        6) SeperateChainingHashST.py        | X
+        7) LinearProbingHashST.py           | X
+
+
+    IV) Heaps:
+        1) min_PQ.py                        |
+        2) max_PQ.py                        |  X    
+        3) index_min_PQ.py                  |                
+        4) index_max_pq.py                  |
+    
+    V) String Processing:
+        1) TriesST.py                       |  X 
+        2) TST.py                           |  X 
+        3) KMP.py                           |  X
+        4) SubstringSearch.py               |  X
+
+    
+    VI) Graph Processing:
+        1) DFS.py                           |
+        2) BFS.py                           |

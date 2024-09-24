@@ -28,6 +28,10 @@ Constraints:
 
 Collected From: https://leetcode.com/problems/merge-intervals/solution/
 """
+#==============================================================================
+
+import collections
+interval = collections.namedtuple('interval', ('left', 'right'))
 
 
 def merge_intervals(intervals):
@@ -43,7 +47,6 @@ def merge_intervals(intervals):
         else:
             res.append(interval)
     return res
-
 
 def merge(intervals: List[List[int]]) -> List[List[int]]:
 
@@ -61,6 +64,22 @@ def merge(intervals: List[List[int]]) -> List[List[int]]:
             merged[-1][1] = max(merged[-1][1], interval[1])
 
     return merged
+
+def min_set_intervals(intervals):
+    intervals.sort(key=lambda interval:interval[0])
+    if not intervals: return
+    interval_set = [intervals[0]]
+    
+    for cur_item in intervals[1:]:
+        cur_interval = interval_set[-1]
+        if cur_item.left <= cur_interval.right:
+            cur_interval = interval(cur_interval.left, max(cur_interval.right, cur_item.right))
+            interval_set.pop()
+            interval_set.append(cur_interval)
+        else:
+            interval_set.append(cur_item)
+    
+    return [[item.left, item.right] for item in interval_set]
 
 
 class MergeIntervals:
@@ -121,11 +140,15 @@ class MergeIntervals:
 
 
 def main():
-    intervals = [
-        sorted([randint(-10, 50), randint(-10, 50)]) for i in range(10)
-    ]
-    returned = merge_intervals(intervals)
-    print(returned)
+    
+    # intervals = [
+    #     sorted([randint(-10, 50), randint(-10, 50)]) for i in range(10)
+    # ]
+    # returned = merge_intervals(intervals)
+
+    intervals = [[2, 5], [1, 3], [6, 9], [10, 15], [20, 25], [-100, 2], [50,60], [15, 20]]
+    returned2 = min_set_intervals([interval(item[0], item[1]) for item in intervals])
+    print(returned2)
 
 
 if __name__ == '__main__':

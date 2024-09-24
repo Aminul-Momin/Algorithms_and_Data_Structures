@@ -38,13 +38,13 @@ COLORS = sorted([
     "MAGENTA", "GRAY", "BISQUE", "AZURE", "AQUA", "BEIGE"
 ])
 # =============================================================================
-
+def given_returned_expected(given, returned, expected): 
+    print(f"Given: {given}", f"Returned: {returned}", f"Expected: {expected}", '='*50, sep='\n')
 
 def swap(array: List[Sequence], i: int, j: int) -> None:
     tmp = array[i]
     array[i] = array[j]
     array[j] = tmp
-
 
 def is_sorted(array):
     ''' Return True if the given list is sorted. '''
@@ -52,7 +52,6 @@ def is_sorted(array):
         if array[i] < array[i - 1]:
             return False
     return True
-
 
 def gen_rendom_matrix(m=5, n=5):
 
@@ -63,11 +62,9 @@ def gen_rendom_matrix(m=5, n=5):
     assert M2 is not M3
     return M1
 
-
 def print_matrix(M):
     for _list in M:
         print(_list)
-
 
 def reverse(a: List, low: int, high: int) -> None:
     """Reverse python sequence object in place.
@@ -88,6 +85,17 @@ def reverse(a: List, low: int, high: int) -> None:
         low += 1
         high -= 1
 
+def rotate_right(A, k):
+    """Rotate a list in place to the right by 'k' positions.
+
+    Args:
+        A (list): An subscriptable and mutable python object like list.
+        k (int): Number of positions to rotate by.
+    """
+    k = k % len(A)
+    reverse(A, 0, len(A)-1)
+    reverse(A, 0, k)
+    reverse(A, k, len(A)-1)
 
 def rotate_list(a: list, rotate_amount: int) -> None:
     """Rotate a list to right by `rotate_amount`.
@@ -406,102 +414,6 @@ def name_of_module_scope():
     Returns the name of the module scope.
     """
     return __name__
-
-# FIXTURE_DIR = os.path.abspath(os.path.join(os.pardir, 'data'))
-
-# @pytest.mark.datafiles(
-#     os.path.join(FIXTURE_DIR, 'img1.jpg'),
-#     os.path.join(FIXTURE_DIR, 'img2.jpg'),
-#     os.path.join(FIXTURE_DIR, 'img3.jpg'),
-# )
-# def test_find_borders(datafiles):
-#     for img in datafiles.listdir():
-#         print(img)
-#assert process(img) == some_expected_value
-
-# def simple_test_AVLTreeST(data):
-#     ST = AVLTreeST()
-#     load_data_from_collection(data, ST)
-
-#     print('*'*25, 'Before Mutation: ', '*'*25)
-#     display_st(ST)
-
-#     del ST["ZERO"]
-#     del ST["FIFTY"]
-#     ST.put("NINTY", 90)
-#     ST['SIXTY'] = 60
-#     del ST['TWENTY']
-
-#     print('*'*25, 'After Mutation: ', '*'*25)
-#     display_st(ST)
-
-# @pytest.mark.skip(reason='Not complete yet !')
-# def test_main():
-
-#     if len(sys.argv) > 1:
-#         simple_test_AVLTreeST(sys.argv[1])
-#     else:
-#         simple_test_AVLTreeST(NUMBERS)
-
-# def simple_test_BinarySearchTreeST(data):
-#     data_file_path = '../data/shellsST.txt'
-#     ST = BinarySearchTreeST()
-#     load_data_from_file(data_file_path, ST)
-
-#     print("*"*25, "Before Mutation: ", "*"*25)
-#     display(ST)
-
-#     del ST["ZERO"]
-#     del ST["FIFTY"]
-#     ST.put("NINTY", 90)
-#     ST["SIXTY"] = 60
-#     del ST["TWENTY"]
-
-#     print("*"*25, "After Mutation: ", "*"*25)
-#     display(ST)
-#     # for key in ST: del ST[key]
-#     # for key in ST: del ST[key]
-
-# def test_dunder_SequentialSearchST():
-#     T1 = SequentialSearchST()
-#     T1["Avocado"] = 10
-#     T1["apple"] = 5
-#     T1["Queens"] = "NYC"
-#     T1["New York"] = "USA"
-#     T1["Manhattan"] = "New York"
-#     load_data("shellsST.txt", T1)
-#     assert T1["apple"]
-#     assert T1["Queens"]
-#     assert len(T1) == 12
-
-#     print("*" * 20, "Before Deletion: ", "*" * 20)
-#     for key in T1.keys():
-#         print(f"\t{key} \t{T1[key]}")
-#     del T1["Queens"]
-#     del T1["the"]
-#     del T1["by"]
-#     del T1["she"]
-#     print("*" * 20, "After Deletion: ", "*" * 20)
-#     for key in T1.keys():
-#         print(f"\t{key} \t{T1[key]}")
-
-# def test_SequentialSearchST(data):
-#     ST = SequentialSearchST()
-#     load_data(data, ST)
-
-#     print("*" * 20, "Before Mutation: ", "*" * 20)
-#     display(ST)
-
-#     del ST["ZERO"]
-#     del ST["FIFTY"]
-#     ST.put("NINTY", 90)
-#     ST["SIXTY"] = 60
-#     del ST["TWENTY"]
-
-#     print("*" * 20, "After Mutation: ", "*" * 20)
-#     display(ST)
-
-
 
 #=============================================================================
 
