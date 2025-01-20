@@ -1,8 +1,9 @@
--e git+git@github.com:Aminul-Momin/Algorithms_and_Data_Structures.git@2861997eb0c80baf5ed84c49a8bdfacd7b9c7f8f#egg=ads
+ads==0.0.1
 appdirs==1.4.4
 attrs==20.3.0
 black==20.8b1
 click==7.1.2
+coverage==7.6.8
 exceptiongroup==1.1.1
 flake8==3.9.2
 importlib-metadata==3.10.1
